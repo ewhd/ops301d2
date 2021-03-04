@@ -10,3 +10,53 @@
 #       to the input setting.
 #       Prints to the screen the directory contents and the new permissions settings 
 #       of everything in the directory.
+
+
+# Define Variables
+dir_path_var=""
+permission_codes_var=""
+
+# Define Functions
+
+
+# Main
+
+# This line prompts the user to input a directory path
+read -p "What is the path of the directory in which you would like to change permissions? " dir_path_var
+echo "This program will change the permissions within $dir_path_var"
+echo "The current permissions are:"
+ls -al $dir_path_var
+
+# This part prompts the user for permission numbers
+read -p "
+
+| Representation | Decimal |
+| - - -          |       0 |
+| - - x          |       1 |
+| - w -          |       2 |
+| - w x          |       3 |
+| r - -          |       4 |
+| r - x          |       5 |
+| r w -          |       6 |
+| r w x          |       7 |
+
+Please provide 3 decimal numbers from 0-7, corresponding with 
+the read/write/execute permissions listed above, to change the 
+permissions for Users, Group, and Others, respectively.
+
+For example: 777 will give full permissions to all.
+             000 will deny all permissions to all.
+
+The permissions of every file in $dir_path_var will be changed.
+
+What would you like to change permissions to? " permission_codes_var
+
+chmod --recursive $permission_codes_var $dir_path_var
+
+echo "The new permissions are"
+ls -al $dir_path_var
+
+#
+
+
+# End
