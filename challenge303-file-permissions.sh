@@ -21,13 +21,14 @@ permission_codes_var=""
 
 # Main
 
-# This line prompts the user to input a directory path
+# This part prompts the user to input a directory path, stores it in dir_path_var, then displays a message 
+# and the current permissions of every file in that directory
 read -p "What is the path of the directory in which you would like to change permissions? " dir_path_var
 echo "This program will change the permissions within $dir_path_var"
 echo "The current permissions are:"
 ls -al $dir_path_var
 
-# This part prompts the user for permission numbers
+# This part gives information and then prompts the user for permission numbers and saves it as permission_codes_var
 read -p "
 
 | Representation | Decimal |
@@ -51,7 +52,10 @@ The permissions of every file in $dir_path_var will be changed.
 
 What would you like to change permissions to? " permission_codes_var
 
+
+# This part changes the permissions of every file in dir_path_var to the code values of permission_codes_var
 chmod --recursive $permission_codes_var $dir_path_var
+
 
 echo "The new permissions are"
 ls -al $dir_path_var
