@@ -20,9 +20,9 @@ import os     #this imports "operating system dependent functinality"
 # Define variables
 
 # These three variables hold bash commands as strings
-whoami_com = "whoami"
-get_network_info_com = "ip a"
-get_hardware_info_com = "lshw -short"
+bash_whoami = "whoami"
+bash_ip_a = "ip a"
+bash_lshw_short = "lshw -short"
 
 
 # Define Functions
@@ -37,10 +37,10 @@ def bash_demo(command):
 
 # These lines call the bash functions stored in variables above
 # Cosmetic lines have been inserted between to visually separate results
-bash_demo(whoami_com)
+bash_demo(bash_whoami)
 print()
-bash_demo(get_network_info_com)
+bash_demo(bash_ip_a)
 print()
-bash_demo(get_hardware_info_com)
+bash_demo(bash_lshw_short)
 
 # End
