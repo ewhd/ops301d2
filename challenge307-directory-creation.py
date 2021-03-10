@@ -11,17 +11,18 @@
 # Import libraries
 
 import os
+import sys
 
 # Declaration of variables
 
-### Read user input here into a variable
+# This line takes a path input from the user
 path_var = input("Enter path: ")
 
 
 # Declaration of functions
 
-### Declare a function here
-
+# This function takes a path and performs os.walk() on it for the root, directories,
+# and files
 def bash_walk(path):
     for (root, dirs, files) in os.walk(path):
         ### Add a print command here to print ==root==
@@ -31,10 +32,18 @@ def bash_walk(path):
         ### Add a print command here to print ==files==
         print(files)
 
+
+
 # Main
 
-### Pass the variable into the function here
-
+# This section opens a new file, calls the function with path_var as the argument,
+# then closes the file
+sys.stdout = open("walk_output.txt", "w")
 bash_walk(path_var)
+sys.stdout.close()
+
+# This section opens the file in Nano (because I can't test running it in LibreOffice!)
+os.system("nano walk_output.txt")
+
 
 # End
