@@ -1,6 +1,6 @@
 #!/user/bin/env python3
 
-# Script:                       challenge307-directory-creation.sh
+# Script:                       challenge307-directory-creation.py
 # Author:                       Ethan Denny
 # Date of latest revision:      3/9/2021
 # Purpose:     
