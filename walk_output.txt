@@ -1,0 +1,12 @@
+/home/ewhd/github/test2
+['dir1']
+['file2', 'file1']
+/home/ewhd/github/test2/dir1
+['dirA']
+[]
+/home/ewhd/github/test2/dir1/dirA
+['dirB']
+['fileA']
+/home/ewhd/github/test2/dir1/dirA/dirB
+[]
+[]
