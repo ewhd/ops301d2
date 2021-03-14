@@ -17,7 +17,7 @@ list_var = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 print(list_var[3])
 
 # This line print the sixth through tenth elements on the list
-print(list_var[5:9])
+print(list_var[5:10])
 
 # This line changes the value of the seventh element to "onion"
 list_var[6] = "onion"
