@@ -2,7 +2,7 @@
 
 # Script:                       challenge311-file-handling.py
 # Author:                       Ethan Denny
-# Date of latest revision:      3/12/2021
+# Date of latest revision:      3/15/2021
 # Purpose:     This script creates a .txt file, appends three lines, 
 #              prints the first line, then deletes the file.
 
