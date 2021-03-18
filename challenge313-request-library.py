@@ -2,7 +2,7 @@
 
 # Script:                       challenge313-request-library.py
 # Author:                       Ethan Denny
-# Date of latest revision:      3/17/2021
+# Date of latest revision:      3/18/2021
 # Purpose:          This script performs an HTTP request on a given url 
 #                   and returns status and header information.
 
