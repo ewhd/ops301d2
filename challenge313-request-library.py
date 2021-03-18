@@ -28,8 +28,8 @@ target_url_var = str
 # This variable will hold the integer value of the choice made by the user from a list of options
 http_method_int_var = int
 
-# This variable holds a tuple of HTTP methods
-http_methods = ("get", "post", "put", "delete", "head", "patch", "options")
+# This variable holds a tuple of HTTP methods + and exit option
+http_methods = ("get", "post", "put", "delete", "head", "patch", "options", "exit")
 
 # This variable will hold the name of the HTTP method as a string
 http_method_name_var = str
@@ -142,23 +142,32 @@ def Main():
                 break
             print("That is not a valid URL. Please try again.\n(Hint: did you begin with http://?)")
 
-        # This section gives the user options of different HTTP methods (and an option to exit)
-        print("\nPlease select an HTTP Method from the follwoing options: \n\
-            1. GET\n\
-            2. POST\n\
-            3. PUT\n\
-            4. DELETE\n\
-            5. HEAD\n\
-            6. PATCH\n\
-            7. OPTIONS\n\
-            8. Exit Program\n\
-            ")
+        # # This section gives the user options of different HTTP methods (and an option to exit)
+        # print("\nPlease select an HTTP Method from the follwoing options: \n\
+        #     1. GET\n\
+        #     2. POST\n\
+        #     3. PUT\n\
+        #     4. DELETE\n\
+        #     5. HEAD\n\
+        #     6. PATCH\n\
+        #     7. OPTIONS\n\
+        #     8. Exit Program\n\
+        #     ")
+
+        # This alternative way to print the options is derived from Carsten's script.
+        # It has the benefit of drawing options from the initial variable, rather than 
+        # keeping a separate listing of options in a string, which could get out of sync.
+        i = 1
+        for method in http_methods:
+            print(str(i) + ". " + method.upper())
+            i += 1
 
         # This section requests the user to choose one of the options given. It loops until a valid option is selected.
         while True:
             try:
                 http_method_int_var = int(input("Enter the number (1-8) of the option you wish to use: "))
-                if 1 <= http_method_int_var <= 8:
+                if http_method_int_var in range(1, len(http_methods) + 1):
+                # if 1 <= http_method_int_var <= 8:
                     break
             except:
                 print("That's not a number! Please try again")
@@ -172,7 +181,7 @@ def Main():
         if http_method_int_var == 8:
             sys.exit("Goodbye!")
         else:
-            print("\nThis script is about to perform a " + http_method_name_var.upper() + " request on " + target_url_var)
+            print("\nThis script is about to perform a " + http_method_name_var.upper() + " request on " + str(target_url_var))
             proceed = yesno("Would you like to proceed")
 
     # This section uses getattr to call the module `requests` with http_method_name_var as the method and target_url_var
